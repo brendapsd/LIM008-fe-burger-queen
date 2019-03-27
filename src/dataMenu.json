@@ -1,0 +1,28 @@
+{
+    "desayuno": {
+        "cafe-americano": 5,
+        "cafe-con-leche": 7,
+        "sandwich-jamon-queso": 10,
+        "jugo-frutas": 7
+    },
+    "almuerzo-cena": {
+        "hamburguesas": {
+            "simple": 10,
+            "doble": 15,
+            "adicional": {
+                "queso": 1,
+                "huevo": 1
+            }
+        },
+        "acompañamientos": {
+            "papas-fritas": 5,
+            "aros-cebolla": 5
+        },
+        "bebidas": {
+            "agua-500": 5,
+            "agua-750": 7,
+            "bebida-gaseosa-500": 7,
+            "bebida-gaseosa-750": 10
+        }
+    }
+}
