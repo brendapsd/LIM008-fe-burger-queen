@@ -1,4 +1,4 @@
-import { mostrar } from "./templates/templateOrder.js";
+import { mostrar } from "./templates/templateMenu.js";
 
 window.addEventListener('load', () => {
   mostrar();  
