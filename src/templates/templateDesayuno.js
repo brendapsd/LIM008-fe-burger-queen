@@ -1,5 +1,5 @@
 export const mostrarDesayuno = () => {
-    const templateDesayuno = `
+  const templateDesayuno = `
     <header>
         <h1>BURGER QUEEN</h1>
     </header>
@@ -11,12 +11,15 @@ export const mostrarDesayuno = () => {
             <button id="almuerzo-cena">ALMUERZO Y CENA</button>
             <div id="menu"></div>
     </div> <br> 
+      <p>Sandwich</p>
+        <button id="sandwich">Sandwich de jamón y queso s/.10</button>
+      <p>Bebida</p>
         <button id="cafe-americano">Café americano s/.5</button>
         <button id="cafe-leche">Café con leche s/.7</button>
-        <button id="sandwich">Sandwich de jamón y queso s/.10</button>
         <button id="jugo">Jugo de frutas natural s/.7</button>
     `; 
-    const divDesayuno = document.createElement('div'); 
-    divDesayuno.innerHTML = templateDesayuno;
-    return divDesayuno 
+  const divDesayuno = document.createElement('div'); 
+  divDesayuno.innerHTML = templateDesayuno;
+  return divDesayuno 
+  
 }; 
