@@ -1,5 +1,7 @@
-import { mostrar } from "./templates/templateMenu.js";
+import { initRouterBurgerQueen } from "./route.js";
 
-window.addEventListener('load', () => {
-  mostrar();  
-});
+const inicializa = () => {
+  initRouterBurgerQueen(); 
+}
+
+window.addEventListener('load', inicializa)
