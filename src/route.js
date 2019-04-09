@@ -1,4 +1,7 @@
-import { mostrarDesayuno, mostrarAlmuerzoCena, pageOrder, pageOrder1 } from "./templates/templateMenu.js";
+import { pageOrder} from "./templates/templateMenu.js";
+import { pageOrder1 } from "./templates/templatePedido.js";
+import { mostrarDesayuno } from "./templates/templateDesayuno.js";
+import { mostrarAlmuerzoCena } from "./templates/templateAlmuerzoCena.js";
 
 export const changeHash = (nameHash) => {
     window.location.hash = nameHash;
