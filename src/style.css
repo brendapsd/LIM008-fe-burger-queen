@@ -1,3 +1,5 @@
-.pedido{
-    color: blue;
+#pedido-cliente{
+    background: coral; 
+    display: flex;
+    float: left;
 }

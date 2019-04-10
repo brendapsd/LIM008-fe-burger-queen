@@ -1,8 +1,10 @@
-import { changeHash } from "../route.js";
+// import { changeHash } from "../route.js";
+import { mostrarDesayuno } from "./templateDesayuno.js";
+import { mostrarAlmuerzoCena } from "./templateAlmuerzoCena.js";
 
 const pageOrder1 = () => {
     const template1 = `
-    <section class="pedido" id="pedido">
+    <section id="pedido">
       <h3>Pedido:</h3>
         <p>Cliente:</p> <p id="nombre"></p>
         <table>
@@ -10,22 +12,32 @@ const pageOrder1 = () => {
             <td><strong>Comida</strong></td>
             <td><strong>Precio</strong></td>
             <td><strong>Cantidad</strong></td>
+            <td><strong>PxC</strong></td>
           </tr>
           <tr>
             <td>Café Americano</td>
             <td>s/. 5.00</td>
-            <td>2</td>
+            <td></td>
           </tr>
           <tr>
-            <td>Total:</td>
-            <td>s/. 5.00</td>
+            <td id="comida"></td>
+            <td id="precio"></td>
+            <td id="cantidad"></td>
+            <td id="precio-total"></td>
+          </tr>
+          <tr>
+            <td>Total del pedido:</td>
+            <td></td>
+            <td>s/. <p id="total"></p></td>
           </tr>
         </table>
+        <button id="enviar-pedido">Enviar pedido</button>
     </section>
     `; 
     const div1 = document.createElement('div'); 
+    div1.setAttribute('id', 'pedido-cliente');
     div1.innerHTML = template1;
-
+    
     return div1
   };
 
@@ -40,7 +52,7 @@ export const pageOrder = () => {
             <button id="btn-enviar">Enviar</button> <br> <br>
             <button id="desayuno">DESAYUNO</button> 
             <button id="almuerzo-cena">ALMUERZO Y CENA</button>
-            <div id="menu"></div>
+            <div id="botones-menu"></div>
     </div>
 
     `; 
@@ -57,12 +69,16 @@ export const pageOrder = () => {
 
     const btnDesayuno = div.querySelector('#desayuno');
     const btnAlmuerzoCena = div.querySelector('#almuerzo-cena');
+    const menu = div.querySelector('#botones-menu')
 
     btnDesayuno.addEventListener('click', () => {
-      menu.innerHTML = changeHash('/desayuno'); 
+    //   menu.innerHTML = changeHash('/desayuno'); 
+        menu.appendChild(mostrarDesayuno());
+         
     });
     btnAlmuerzoCena.addEventListener('click', () => {
-      menu.innerHTML = changeHash('/almuerzocena'); 
+    //   menu.innerHTML = changeHash('/almuerzocena');  
+        menu.appendChild(mostrarAlmuerzoCena());
     }); 
     
     div.appendChild(pageOrder1())
