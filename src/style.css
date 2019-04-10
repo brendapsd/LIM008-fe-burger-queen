@@ -1,5 +1,10 @@
+#contenido{
+    display: flex; 
+    flex-wrap: wrap; 
+}
 #pedido-cliente{
     background: coral; 
-    display: flex;
-    float: left;
+    float: right;
+    display: grid;
 }
+
