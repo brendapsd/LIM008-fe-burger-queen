@@ -67,13 +67,12 @@ export const pageOrder = () => {
     const menu = div.querySelector('#botones-menu')
 
     btnDesayuno.addEventListener('click', () => {
-    //   menu.innerHTML = changeHash('/desayuno'); 
       const ultimoHijo = document.getElementById('contenedor-almuerzo-cena');
       menu.appendChild(mostrarDesayuno());    
       menu.removeChild(ultimoHijo);  
     });
     btnAlmuerzoCena.addEventListener('click', () => {
-    //   menu.innerHTML = changeHash('/almuerzocena'); 
+
       const ultimoHijo = document.getElementById('contenedor-desayuno'); 
         menu.removeChild(ultimoHijo); 
         menu.appendChild(mostrarAlmuerzoCena());

@@ -3,14 +3,14 @@ export const objSandwich = {
   precio: 's/. '+ 10,
   cantidad: 2,
   precioXcantidad: 20
-}
+};
 
 export const objCafeAmericano = {
   comida: 'Café americano',
   precio: 's/. '+ 5,
   cantidad: 1,
   precioXcantidad: 5
-}
+}; 
 
 export const agregarPedido = (obj) => {
   const templateAgregarPedido = `
@@ -23,7 +23,6 @@ export const agregarPedido = (obj) => {
   const divAgregarPedido = document.createElement('tr'); 
   
   divAgregarPedido.innerHTML = templateAgregarPedido; 
-  console.log(divAgregarPedido)
   
   return divAgregarPedido
 }

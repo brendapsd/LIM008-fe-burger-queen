@@ -11,7 +11,14 @@ const inicializa = () => {
     messagingSenderId: "632783394554"
   };
   firebase.initializeApp(config);
-  initRouterBurgerQueen(); 
+  initRouterBurgerQueen();
 }
 
 window.addEventListener('load', inicializa)
+
+firebase.firestore().collection("menu").get().then(function(querySnapshot) {
+  querySnapshot.forEach(function(doc) {
+      // doc.data() is never undefined for query doc snapshots
+      console.log(doc.id, " => ", doc.data());
+  });
+});
