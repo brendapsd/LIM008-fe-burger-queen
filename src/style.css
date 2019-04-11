@@ -2,9 +2,15 @@
     display: flex; 
     flex-wrap: wrap; 
 }
+
+#pantalla{
+    width: 50%;
+}
+
 #pedido-cliente{
-    background: coral; 
-    float: right;
-    display: grid;
+    background: black; 
+    /* float: right; */
+    color: white;
+    width: 50%;
 }
 

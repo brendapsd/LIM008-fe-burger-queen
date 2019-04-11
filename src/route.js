@@ -1,4 +1,4 @@
-import { pageOrder} from "./templates/templateMenu.js";
+import { pageOrder, pageOrder1} from "./templates/templateMenu.js";
 import { mostrarDesayuno } from "./templates/templateDesayuno.js";
 import { mostrarAlmuerzoCena } from "./templates/templateAlmuerzoCena.js";
 
@@ -24,6 +24,7 @@ const changeRouter = (hash) => {
     switch (router) {
       case 'home':
         contenido.appendChild(pageOrder());
+        contenido.appendChild(pageOrder1());
         break;
       case 'desayuno':
         contenido.appendChild(mostrarDesayuno());
@@ -33,6 +34,7 @@ const changeRouter = (hash) => {
         break;
       default:
         contenido.appendChild(pageOrder());
+        contenido.appendChild(pageOrder1()); 
     }
   };
   
