@@ -11,7 +11,7 @@ const inicializa = () => {
     messagingSenderId: "632783394554"
   };
   firebase.initializeApp(config);
-  initRouterBurgerQueen(); 
+  initRouterBurgerQueen();
 }
 
 window.addEventListener('load', inicializa)
