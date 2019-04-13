@@ -2,14 +2,14 @@ export const objSandwich = {
   comida: 'Sandwich de jamón y queso',
   precio: 's/. '+ 10,
   cantidad: 2,
-  precioXcantidad: 20
+  precioXcantidad: 's/. ' + 20
 };
 
 export const objCafeAmericano = {
   comida: 'Café americano',
   precio: 's/. '+ 5,
   cantidad: 1,
-  precioXcantidad: 5
+  precioXcantidad: 's/. ' + 5
 }; 
 
 export const agregarPedido = (obj) => {
@@ -29,11 +29,11 @@ export const agregarPedido = (obj) => {
 export const mostrarDesayuno = () => {
   const templateDesayuno = `
       <p>Sandwich</p>
-        <button id="sandwich">Sandwich de jamón y queso s/.10</button>
+        <button id="sandwich" class="btn btn-success">Sandwich de jamón y queso s/.10</button>
       <p>Bebida</p>
-        <button id="cafe-americano">Café americano s/.5</button>
-        <button id="cafe-leche">Café con leche s/.7</button>
-        <button id="jugo">Jugo de frutas natural s/.7</button>
+        <button id="cafe-americano" class="btn btn-success">Café americano s/.5</button>
+        <button id="cafe-leche" class="btn btn-success">Café con leche s/.7</button>
+        <button id="jugo" class="btn btn-success">Jugo de frutas natural s/.7</button>
     `; 
   const divDesayuno = document.createElement('div'); 
   divDesayuno.setAttribute('id', 'contenedor-desayuno');
@@ -42,7 +42,7 @@ export const mostrarDesayuno = () => {
   const btnSandwich = divDesayuno.querySelector('#sandwich'); 
   btnSandwich.addEventListener('click', () => {
     const pedidoAgregado = document.getElementById('pedido-agregado');
-    pedidoAgregado.appendChild(agregarPedido(objSandwich));  
+    pedidoAgregado.appendChild(agregarPedido(objSandwich)); 
   }); 
   
   const btnCafeAmericano = divDesayuno.querySelector('#cafe-americano'); 

@@ -1,3 +1,18 @@
+body{
+    background: url(https://image.freepik.com/foto-gratis/sabrosa-hamburguesa-queso-lechuga_1232-498.jpg);
+    background-position: center;
+    background-size: cover;
+    color: white;
+    background-repeat: no-repeat;
+    background-attachment: fixed    
+}
+header{
+    width: 100%; 
+    background: black; 
+    color: white;
+    margin: 0; 
+    text-align: center; 
+}
 #contenido{
     display: flex; 
     flex-wrap: wrap; 
@@ -8,9 +23,9 @@
 }
 
 #pedido-cliente{
-    background: black; 
+    border: 2px solid black;
     /* float: right; */
-    color: white;
     width: 50%;
+    background:rgba(255,255,255, 0.9);
 }
 

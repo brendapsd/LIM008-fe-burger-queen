@@ -6,8 +6,7 @@ export const pageOrder1 = () => {
     const template1 = `
       <h3>Pedido:</h3>
         <p>Cliente:</p> <p id="nombre"></p>
-        <table>
-        <caption>Pedidos</caption>
+        <table class="table">
           <thead>
             <tr>
               <th>Comida</th>
@@ -23,11 +22,14 @@ export const pageOrder1 = () => {
             <tr>
               <td>Total del pedido:</td>
               <td></td>
+              <td></td>
               <td>s/. <p id="total"></p></td>
             </tr>
-          </foot>
+          </tfoot>
         </table>
-        <button id="enviar-pedido">Enviar pedido</button>
+
+        <button id="enviar-pedido" class="btn btn-danger">Enviar pedido</button>
+
     `;
     const div1 = document.createElement('div'); 
     div1.setAttribute('id', 'pedido-cliente');
@@ -38,15 +40,12 @@ export const pageOrder1 = () => {
 
 export const pageOrder = () => {
     const template = `
-      <header>
-          <h1>BURGER QUEEN</h1>
-      </header>
       <div id="menu">
           <h2>Menú</h2>
               <input id="name" type="text" placeholder="Nombre del cliente">
-              <button id="btn-enviar">Enviar</button> <br> <br>
-              <button id="desayuno">DESAYUNO</button> 
-              <button id="almuerzo-cena">ALMUERZO Y CENA</button>
+              <button id="btn-enviar" class="btn btn-primary">Enviar</button> <br> <br>
+              <button id="desayuno" class="btn btn-primary">DESAYUNO</button> 
+              <button id="almuerzo-cena" class="btn btn-primary">ALMUERZO Y CENA</button>
               <div id="botones-menu"></div>
       </div>
     `; 
@@ -80,3 +79,5 @@ export const pageOrder = () => {
 
     return div
 };
+
+
