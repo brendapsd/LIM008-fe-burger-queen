@@ -67,14 +67,23 @@ export const pageOrder = () => {
 
     btnDesayuno.addEventListener('click', () => {
       const ultimoHijo = document.getElementById('contenedor-almuerzo-cena');
-      menu.appendChild(mostrarDesayuno());    
-      menu.removeChild(ultimoHijo);  
+      menu.appendChild(mostrarDesayuno());
+      if(ultimoHijo){
+        menu.removeChild(ultimoHijo);
+      } 
+      btnDesayuno.disabled = true;
+      btnAlmuerzoCena.disabled = false; 
     });
+
     btnAlmuerzoCena.addEventListener('click', () => {
 
       const ultimoHijo = document.getElementById('contenedor-desayuno'); 
-        menu.removeChild(ultimoHijo); 
+      if (ultimoHijo){
+        menu.removeChild(ultimoHijo);
+      } 
         menu.appendChild(mostrarAlmuerzoCena());
+    btnAlmuerzoCena.disabled = true;
+    btnDesayuno.disabled = false; 
     }); 
 
     return div
