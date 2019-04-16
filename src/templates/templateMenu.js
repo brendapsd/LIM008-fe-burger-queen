@@ -1,6 +1,6 @@
-// import { changeHash } from "../route.js";
 import { mostrarDesayuno } from "./templateDesayuno.js";
 import { mostrarAlmuerzoCena } from "./templateAlmuerzoCena.js";
+import { dataMenu } from "../main.js";
 
 export const pageOrder1 = () => {
     const template1 = `
@@ -67,7 +67,7 @@ export const pageOrder = () => {
 
     btnDesayuno.addEventListener('click', () => {
       const ultimoHijo = document.getElementById('contenedor-almuerzo-cena');
-      menu.appendChild(mostrarDesayuno());
+      menu.appendChild(mostrarDesayuno(dataMenu));
       if(ultimoHijo){
         menu.removeChild(ultimoHijo);
       } 
