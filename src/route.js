@@ -24,7 +24,7 @@ const changeRouter = (hash) => {
       case 'menu':
         dataMenu((arrDatos) => {
           contenido.appendChild(pageOrder(arrDatos)); 
-          contenido.appendChild(pageOrder1());
+          contenido.appendChild(pageOrder1(arrDatos));
         })
         break;
       // case 'inicio':

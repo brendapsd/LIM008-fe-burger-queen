@@ -1,7 +1,7 @@
 import { mostrarDesayuno } from "./templateDesayuno.js";
 import { mostrarAlmuerzoCena } from "./templateAlmuerzoCena.js";
 
-export const pageOrder1 = () => {
+export const pageOrder1 = (precio) => {
     const template1 = `
       <h3>Pedido:</h3>
         <p>Cliente:</p> <p id="nombre"></p>
@@ -22,7 +22,7 @@ export const pageOrder1 = () => {
               <td>Total del pedido:</td>
               <td></td>
               <td></td>
-              <td>s/. <p id="total"></p></td>
+              <td>s/. <p id="total">${precio}</p></td>
             </tr>
           </tfoot>
         </table>
@@ -33,7 +33,7 @@ export const pageOrder1 = () => {
     const div1 = document.createElement('div'); 
     div1.setAttribute('id', 'pedido-cliente');
     div1.innerHTML = template1;
-    
+    console.log(precio)
     return div1
   };
 
@@ -83,16 +83,10 @@ export const pageOrder = (objData) => {
         menu.appendChild(mostrarAlmuerzoCena(boton))
       });
     }
-    // console.log(objAlmuerzoCena)
 
     btnAlmuerzoCena.addEventListener('click', () => {
-      // const ultimoHijo = document.getElementById('contenedor-desayuno'); 
       menu.innerHTML = ''; 
       botonesAlmuerzoCena()
-      // if (menu){
-      //   menu.removeChild(ultimoHijo);
-      // } 
-        // menu.appendChild(mostrarAlmuerzoCena());
     btnAlmuerzoCena.disabled = true;
     btnDesayuno.disabled = false; 
     }); 

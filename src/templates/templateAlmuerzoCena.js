@@ -23,7 +23,7 @@ export const agregarPedido = (obj) => {
               <td id="precio">s/.${obj.precio}</td>
               <td id="cantidad">
               <i class="cursor fas fa-minus mr-2 text-secondary"></i>
-              <span class="badge badge-pill badge-primary"></span>
+              <span class="badge badge-pill badge-warning">1</span>
               <i class="cursor fas fa-plus ml-2 text-secondary"></i>
               </td>
               <td id="precioXcantidad">s/.${obj.precio}</td>
