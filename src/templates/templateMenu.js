@@ -1,6 +1,5 @@
 import { mostrarDesayuno } from "./templateDesayuno.js";
 import { mostrarAlmuerzoCena } from "./templateAlmuerzoCena.js";
-import { dataMenu } from "../main.js";
 
 export const pageOrder1 = () => {
     const template1 = `
@@ -38,7 +37,7 @@ export const pageOrder1 = () => {
     return div1
   };
 
-export const pageOrder = () => {
+export const pageOrder = (objData) => {
     const template = `
       <div id="menu">
           <h2>Menú</h2>
@@ -54,7 +53,6 @@ export const pageOrder = () => {
     div.innerHTML = template;
    
     const btnEnviar = div.querySelector('#btn-enviar');
-
     btnEnviar.addEventListener('click', () => {
         const name = div.querySelector('#name').value;    
         const nombre = document.querySelector('#nombre'); 
@@ -63,30 +61,41 @@ export const pageOrder = () => {
 
     const btnDesayuno = div.querySelector('#desayuno');
     const btnAlmuerzoCena = div.querySelector('#almuerzo-cena');
-    const menu = div.querySelector('#botones-menu')
+    const menu = div.querySelector('#botones-menu');
+
+    const objDesayuno = objData.filter(desayuno => desayuno.comida.includes('desayuno')); 
+    const botonesDesayuno = () => {
+      objDesayuno.forEach(boton => {
+        menu.appendChild(mostrarDesayuno(boton))
+      });
+    }
 
     btnDesayuno.addEventListener('click', () => {
-      const ultimoHijo = document.getElementById('contenedor-almuerzo-cena');
-      menu.appendChild(mostrarDesayuno(dataMenu));
-      if(ultimoHijo){
-        menu.removeChild(ultimoHijo);
-      } 
+      menu.innerHTML = ''; 
+      botonesDesayuno()
       btnDesayuno.disabled = true;
       btnAlmuerzoCena.disabled = false; 
     });
 
-    btnAlmuerzoCena.addEventListener('click', () => {
+    const objAlmuerzoCena = objData.filter(desayuno => desayuno.comida.includes('almuerzo-cena')); 
+    const botonesAlmuerzoCena = () => {
+      objAlmuerzoCena.forEach(boton => {
+        menu.appendChild(mostrarAlmuerzoCena(boton))
+      });
+    }
+    // console.log(objAlmuerzoCena)
 
-      const ultimoHijo = document.getElementById('contenedor-desayuno'); 
-      if (ultimoHijo){
-        menu.removeChild(ultimoHijo);
-      } 
-        menu.appendChild(mostrarAlmuerzoCena());
+    btnAlmuerzoCena.addEventListener('click', () => {
+      // const ultimoHijo = document.getElementById('contenedor-desayuno'); 
+      menu.innerHTML = ''; 
+      botonesAlmuerzoCena()
+      // if (menu){
+      //   menu.removeChild(ultimoHijo);
+      // } 
+        // menu.appendChild(mostrarAlmuerzoCena());
     btnAlmuerzoCena.disabled = true;
     btnDesayuno.disabled = false; 
     }); 
 
     return div
 };
-
-

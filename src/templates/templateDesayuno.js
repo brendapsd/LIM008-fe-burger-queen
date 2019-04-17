@@ -1,3 +1,16 @@
+export const mostrarDesayuno = (obj) => {
+  const templateDesayuno = `
+        <button id="${obj.id}" class="btn btn-success">${obj.pedido} s/.${obj.precio}</button>
+    `; 
+    
+  const divDesayuno = document.createElement('div'); 
+  divDesayuno.setAttribute('id', 'contenedor-desayuno');
+  divDesayuno.innerHTML = templateDesayuno;
+  console.log(divDesayuno)
+  
+  return divDesayuno 
+}; 
+
 // export const agregarPedido = (obj) => {
 //   const templateAgregarPedido = `
 //             <td id="comida">${obj.comida}</td>
@@ -12,35 +25,3 @@
 
 //   return divAgregarPedido
 // }
-export const mostrarDesayuno = (obj) => {
-  const templateDesayuno = `
-        <button id="sandwich-${obj.id}" class="btn btn-success">${obj.pedido} s/.${obj.precio}</button>
-        <button id="americano-${obj.id}" class="btn btn-success">${obj.pedido} s/.${obj.precio}</button>
-        <button id="leche-${obj.id}" class="btn btn-success">${obj.pedido} s/.${obj.precio}</button>
-        <button id="jugo-${obj.id}" class="btn btn-success">${obj.pedido} s/.${obj.precio}</button>
-    `; 
-
-  // const templateDesayuno = `
-  //       <div id="cont-btn"></div> 
-  //   `; 
-  
-  const divDesayuno = document.createElement('div'); 
-  divDesayuno.setAttribute('id', 'contenedor-desayuno');
-  divDesayuno.innerHTML = templateDesayuno;
-  
-  // const btnSandwich = divDesayuno.querySelector('#sandwich'); 
-  // btnSandwich.addEventListener('click', () => {
-  //   // const pedidoAgregado = document.getElementById('pedido-agregado');
-  //   // pedidoAgregado.appendChild(agregarPedido(objSandwich)); 
-  // }); 
-  
-  // const btnCafeAmericano = divDesayuno.querySelector('#cafe-americano'); 
-  // btnCafeAmericano.addEventListener('click', () => {
-  //   // const pedidoAgregado = document.getElementById('pedido-agregado');
-  //   // pedidoAgregado.appendChild(agregarPedido(objCafeAmericano));  
-  // });
-
-
-  return divDesayuno 
-}; 
-

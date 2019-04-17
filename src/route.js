@@ -1,6 +1,5 @@
 import { pageOrder, pageOrder1} from "./templates/templateMenu.js";
-import { mostrarDesayuno } from "./templates/templateDesayuno.js";
-import { mostrarAlmuerzoCena } from "./templates/templateAlmuerzoCena.js";
+import { dataMenu } from "./controller/functionFirebase.js";
 
 export const changeHash = (nameHash) => {
     window.location.hash = nameHash;
@@ -9,7 +8,7 @@ export const changeHash = (nameHash) => {
 const changeRouter = (hash) => {
     if (hash === '#/' || hash === '' || hash === '#') {
       return showTemplate(hash); //el que carga por defecto, primera vez :3
-    } else if (hash === '#/home' || hash=== '#/desayuno' || hash === '#/almuerzocena') {
+    } else if (hash === '#/menu' || hash=== '#/inicio' || hash === '#/cocina') {
       return showTemplate(hash);
     } else {
       return showTemplate('#/404');
@@ -22,19 +21,25 @@ const changeRouter = (hash) => {
     const contenido = document.getElementById("contenido")
     contenido.innerHTML = '';
     switch (router) {
-      case 'home':
-        contenido.appendChild(pageOrder());
-        contenido.appendChild(pageOrder1());
+      case 'menu':
+        dataMenu((arrDatos) => {
+          contenido.appendChild(pageOrder(arrDatos)); 
+          contenido.appendChild(pageOrder1());
+        })
         break;
-      case 'desayuno':
-        contenido.appendChild(mostrarDesayuno());
-        break;
-      case 'almuerzocena':
-        contenido.appendChild(mostrarAlmuerzoCena()); 
-        break;
+      // case 'inicio':
+      //   contenido.appendChild(mostrarDesayuno());
+      //   break;
+      // case 'cocina':
+      //   contenido.appendChild(mostrarAlmuerzoCena()); 
+      //   break;
+
       default:
-        contenido.appendChild(pageOrder());
-        contenido.appendChild(pageOrder1()); 
+      dataMenu((arrDatos) => {
+        contenido.appendChild(pageOrder(arrDatos)); 
+        contenido.appendChild(pageOrder1());
+      })
+         
     }
   };
   
