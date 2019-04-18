@@ -1,7 +1,7 @@
 import { mostrarDesayuno } from "./templateDesayuno.js";
 import { mostrarAlmuerzoCena } from "./templateAlmuerzoCena.js";
 
-export const pageOrder1 = (precio) => {
+export const pageOrder1 = () => {
     const template1 = `
       <h3>Pedido:</h3>
         <p>Cliente:</p> <p id="nombre"></p>
@@ -22,7 +22,7 @@ export const pageOrder1 = (precio) => {
               <td>Total del pedido:</td>
               <td></td>
               <td></td>
-              <td>s/. <p id="total">${precio}</p></td>
+              <td>s/. <p id="total"></p></td>
             </tr>
           </tfoot>
         </table>
@@ -33,11 +33,11 @@ export const pageOrder1 = (precio) => {
     const div1 = document.createElement('div'); 
     div1.setAttribute('id', 'pedido-cliente');
     div1.innerHTML = template1;
-    console.log(precio)
+    
     return div1
   };
 
-export const pageOrder = (objData) => {
+export const pageOrder = (arrObjData) => {
     const template = `
       <div id="menu">
           <h2>Menú</h2>
@@ -63,9 +63,10 @@ export const pageOrder = (objData) => {
     const btnAlmuerzoCena = div.querySelector('#almuerzo-cena');
     const menu = div.querySelector('#botones-menu');
 
-    const objDesayuno = objData.filter(desayuno => desayuno.comida.includes('desayuno')); 
+    //Filtrar la data por valor desayuno
+    const arrObjDesayuno = arrObjData.filter(objData => objData.comida.includes('desayuno')); 
     const botonesDesayuno = () => {
-      objDesayuno.forEach(boton => {
+      arrObjDesayuno.forEach(boton => {
         menu.appendChild(mostrarDesayuno(boton))
       });
     }
@@ -77,9 +78,10 @@ export const pageOrder = (objData) => {
       btnAlmuerzoCena.disabled = false; 
     });
 
-    const objAlmuerzoCena = objData.filter(desayuno => desayuno.comida.includes('almuerzo-cena')); 
+    //Filtrar la data por valor almuerzo-cena
+    const arrObjAlmuerzoCena = arrObjData.filter(objData => objData.comida.includes('almuerzo-cena')); 
     const botonesAlmuerzoCena = () => {
-      objAlmuerzoCena.forEach(boton => {
+      arrObjAlmuerzoCena.forEach(boton => {
         menu.appendChild(mostrarAlmuerzoCena(boton))
       });
     }

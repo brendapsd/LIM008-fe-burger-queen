@@ -8,3 +8,17 @@ export const dataMenu = (callback) =>
         callback(arr)
     });
 
+// export const guardarArray = (arrFiltrar
+//   ) => {
+
+// }
+// export const guardarLocalStorage = (obj) => {
+//   localStorage.setItem('pedido', JSON.stringify(obj));
+// }
+
+// export const obtenerLocalStorage = () => {
+//   let pedido = JSON.parse(localStorage.getItem('pedido'));
+//   console.log(pedido)
+// }
+
+// obtenerLocalStorage(); 

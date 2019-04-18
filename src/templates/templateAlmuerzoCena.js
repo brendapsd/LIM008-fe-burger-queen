@@ -10,7 +10,7 @@ export const mostrarAlmuerzoCena = (obj) => {
   
     const btnComida = divAlmuerzoCena.querySelector(`#btn-${obj.id}`);
     btnComida.addEventListener('click', () => {
-        console.log(`${obj.pedido}`)
+        console.log(obj)
         pedidoAgregado.appendChild(agregarPedido(obj)); 
     })
   

@@ -18,13 +18,13 @@ const changeRouter = (hash) => {
   
   const showTemplate = (routers) => {
     const router = routers.substr(2, routers.length - 2)
-    const contenido = document.getElementById("contenido")
+    const contenido = document.getElementById('contenido')
     contenido.innerHTML = '';
     switch (router) {
       case 'menu':
         dataMenu((arrDatos) => {
           contenido.appendChild(pageOrder(arrDatos)); 
-          contenido.appendChild(pageOrder1(arrDatos));
+          contenido.appendChild(pageOrder1());
         })
         break;
       // case 'inicio':

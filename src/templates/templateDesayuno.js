@@ -1,4 +1,4 @@
-export const mostrarDesayuno = (obj) => {
+export const mostrarDesayuno = (obj) => { 
   const templateDesayuno = `
         <button id="btn-${obj.id}" class="btn btn-success">${obj.pedido} s/.${obj.precio}</button>
     `; 
@@ -7,14 +7,19 @@ export const mostrarDesayuno = (obj) => {
   divDesayuno.setAttribute('id', 'contenedor-desayuno');
   divDesayuno.innerHTML = templateDesayuno;
 
-  const pedidoAgregado = document.getElementById('pedido-agregado')
+  // const pedidoAgregado = document.getElementById('pedido-agregado')
   
   const btnComida = divDesayuno.querySelector(`#btn-${obj.id}`);
+  let arr = [];
   btnComida.addEventListener('click', () => {
-    console.log(`${obj.pedido}`)
-    pedidoAgregado.appendChild(agregarPedido(obj)); 
+    // const guardarPedidoArr = () => {
+      
+    //   const newArr = arr.push(obj)
+    //   console.log(newArr);
+    // }
+    // console.log(arr)
+    // pedidoAgregado.appendChild(guardarPedido(obj)); 
   })
-
   return divDesayuno 
 }; 
 
