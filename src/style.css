@@ -1,5 +1,5 @@
 body{
-    background: url(https://image.freepik.com/foto-gratis/sabrosa-hamburguesa-queso-lechuga_1232-498.jpg);
+    background: url(https://image.freepik.com/foto-gratis/sabrosa-hamburguesa-aros-cebolla_23-2147684637.jpg);
     background-position: center;
     background-size: cover;
     color: white;
@@ -19,13 +19,29 @@ header{
 }
 
 #pantalla{
-    width: 50%;
+    width: 60%;
 }
 
 #pedido-cliente{
     border: 2px solid black;
     /* float: right; */
-    width: 50%;
+    width: 40%;
+    height: 50%;
     background:rgba(255,255,255, 0.9);
 }
-
+.input{
+    margin: 0.5%;
+}
+.boton{
+    margin: 0.5%;
+}
+#contenedor-desayuno, #contenedor-almuerzo-cena{
+    display: inline;
+}
+p{
+    display: inline;
+    margin: 1%;
+}
+table{
+    margin: 1%;
+}

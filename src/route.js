@@ -1,5 +1,6 @@
-import { pageOrder, pageOrder1} from "./templates/templateMenu.js";
+import { mostrarMenu} from "./templates/templateMenu.js";
 import { dataMenu } from "./controller/functionFirebase.js";
+import { mostrarPedido } from "./templates/templatePedido.js";
 
 export const changeHash = (nameHash) => {
     window.location.hash = nameHash;
@@ -23,8 +24,8 @@ const changeRouter = (hash) => {
     switch (router) {
       case 'menu':
         dataMenu((arrDatos) => {
-          contenido.appendChild(pageOrder(arrDatos)); 
-          contenido.appendChild(pageOrder1());
+          contenido.appendChild(mostrarMenu(arrDatos)); 
+          contenido.appendChild(mostrarPedido());
         })
         break;
       // case 'inicio':
@@ -36,8 +37,8 @@ const changeRouter = (hash) => {
 
       default:
       dataMenu((arrDatos) => {
-        contenido.appendChild(pageOrder(arrDatos)); 
-        contenido.appendChild(pageOrder1());
+        contenido.appendChild(mostrarMenu(arrDatos)); 
+        contenido.appendChild(mostrarPedido());
       })
          
     }
