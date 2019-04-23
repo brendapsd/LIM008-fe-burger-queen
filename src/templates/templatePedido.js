@@ -29,6 +29,7 @@ export const mostrarPedido = () => {
     `;
     const div1 = document.createElement('div'); 
     div1.setAttribute('id', 'pedido-cliente');
+    div1.setAttribute('class', '.col-xl-4 .col-lg-4 .col-md-4');
     div1.innerHTML = template1;
     
     return div1

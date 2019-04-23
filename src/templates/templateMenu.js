@@ -1,5 +1,6 @@
 import { mostrarDesayuno } from "./templateDesayuno.js";
 import { mostrarAlmuerzoCena } from "./templateAlmuerzoCena.js";
+import { filtrarArrDesayuno, filtrarArrAlmuerzoCena } from "../controller/controller.js";
 
 export const mostrarMenu = (arrObjData) => {
     const template = `
@@ -14,6 +15,7 @@ export const mostrarMenu = (arrObjData) => {
     `; 
     const div = document.createElement('div'); 
     div.setAttribute('id', 'pantalla');
+    div.setAttribute('class', '.col-xl-8 .col-lg-8 .col-md-8')
     div.innerHTML = template;
    
     const btnEnviar = div.querySelector('#btn-enviar');
@@ -27,33 +29,20 @@ export const mostrarMenu = (arrObjData) => {
     const btnAlmuerzoCena = div.querySelector('#almuerzo-cena');
     const menu = div.querySelector('#botones-menu');
 
-    //Filtrar la data por valor desayuno
-    const arrObjDesayuno = arrObjData.filter(objData => objData.comida.includes('desayuno')); 
-    const botonesDesayuno = () => {
-      arrObjDesayuno.forEach(boton => {
-        menu.appendChild(mostrarDesayuno(boton, arrObjDesayuno))
-      });
-    }
-
     btnDesayuno.addEventListener('click', () => {
       menu.innerHTML = ''; 
-      botonesDesayuno()
-
+      filtrarArrDesayuno(arrObjData).forEach(boton => {
+        menu.appendChild(mostrarDesayuno(boton, arrObjData))
+      })
       btnDesayuno.disabled = true;
       btnAlmuerzoCena.disabled = false; 
     });
 
-    //Filtrar la data por valor almuerzo-cena
-    const arrObjAlmuerzoCena = arrObjData.filter(objData => objData.comida.includes('almuerzo-cena')); 
-    const botonesAlmuerzoCena = () => {
-      arrObjAlmuerzoCena.forEach(boton => {
-        menu.appendChild(mostrarAlmuerzoCena(boton))
-      });
-    }
-
     btnAlmuerzoCena.addEventListener('click', () => {
       menu.innerHTML = ''; 
-      botonesAlmuerzoCena()
+    filtrarArrAlmuerzoCena(arrObjData).forEach(boton => {
+      menu.appendChild(mostrarAlmuerzoCena(boton))
+    })
     btnAlmuerzoCena.disabled = true;
     btnDesayuno.disabled = false; 
     }); 

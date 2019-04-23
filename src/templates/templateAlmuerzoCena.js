@@ -1,6 +1,6 @@
-export const mostrarAlmuerzoCena = (obj) => {
+export const mostrarAlmuerzoCena = (objs) => {
     const templateAlmuerzoCena = `
-        <button id="btn-${obj.id}" class="boton btn btn-warning btn-lg">${obj.pedido} s/.${obj.precio}</button>
+        <button id="btn-${objs.id}" class="boton btn btn-warning btn-lg">${objs.pedido} s/.${objs.precio}</button>
     `;
     const divAlmuerzoCena = document.createElement('div');
     divAlmuerzoCena.setAttribute('id','contenedor-almuerzo-cena')
@@ -8,10 +8,10 @@ export const mostrarAlmuerzoCena = (obj) => {
     
     const pedidoAgregado = document.getElementById('pedido-agregado')
   
-    const btnComida = divAlmuerzoCena.querySelector(`#btn-${obj.id}`);
+    const btnComida = divAlmuerzoCena.querySelector(`#btn-${objs.id}`);
     btnComida.addEventListener('click', () => {
-        console.log(obj)
-        pedidoAgregado.appendChild(agregarPedido(obj)); 
+        console.log(objs)
+        pedidoAgregado.appendChild(agregarPedido(objs)); 
     })
   
     return divAlmuerzoCena

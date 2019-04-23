@@ -1,4 +1,6 @@
-export const mostrarDesayuno = (obj, arrData) => {
+import { guardarPedidoArr } from "../controller/controller.js";
+
+export const mostrarDesayuno = (obj) => {
   const templateDesayuno = `
         <button id="btn-${obj.id}" class="boton btn btn-success btn-lg">${obj.pedido} s/.${obj.precio}</button>
     `; 
@@ -7,31 +9,23 @@ export const mostrarDesayuno = (obj, arrData) => {
   divDesayuno.setAttribute('id', 'contenedor-desayuno');
   divDesayuno.innerHTML = templateDesayuno;
 
-  // const pedidoAgregado = document.getElementById('pedido-agregado')
-  const arr = [];
-  const guardarPedido = () => {
-     arrData.forEach(elem => {
-      arr.push({
-        item: elem.pedido,
-        price: elem.precio
-       })
-      //  console.log(arr)
-      });
-    console.log(arr)
-    return arr
-   }
+  const pedidoAgregado = document.getElementById('pedido-agregado')
    
   const btnComida = divDesayuno.querySelector(`#btn-${obj.id}`);
   btnComida.addEventListener('click', () => {
-   guardarPedido()
-  
+   guardarPedidoArr(obj).forEach(producto => {
+     pedidoAgregado.appendChild(agregarPedido(producto))
+   })
+   btnComida.disabled = true; 
+  //  console.log(contador)
   })
   return divDesayuno 
 }; 
 
 export const agregarPedido = (obj) => {
+  console.log(obj)
   const templateAgregarPedido = `
-            <td id="comida">${obj.pedido}</td>
+            <td id="comida">${obj.producto}</td>
             <td id="precio">s/.${obj.precio}</td>
             <td id="cantidad">
             <i class="cursor fas fa-minus mr-2 text-secondary"></i>

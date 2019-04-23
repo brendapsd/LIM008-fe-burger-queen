@@ -1,5 +1,5 @@
 import { mostrarMenu} from "./templates/templateMenu.js";
-import { dataMenu } from "./controller/functionFirebase.js";
+import { dataMenu } from "./controller/controller.js";
 import { mostrarPedido } from "./templates/templatePedido.js";
 
 export const changeHash = (nameHash) => {
