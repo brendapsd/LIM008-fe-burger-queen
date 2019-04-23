@@ -32,6 +32,12 @@ export const agregarPedido = (obj) => {
     const divAgregarPedido = document.createElement('tr'); 
     
     divAgregarPedido.innerHTML = templateAgregarPedido; 
+
+    const btnEliminar = divAgregarPedido.querySelector('#eliminar')
+
+    btnEliminar.addEventListener('click', () => {
+        divAgregarPedido.innerHTML = '';
+    })
   
     return divAgregarPedido
   }; 
