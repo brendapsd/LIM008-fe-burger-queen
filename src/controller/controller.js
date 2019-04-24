@@ -32,17 +32,18 @@ export const filtrarArrAlmuerzoCena = (arrObj) => {
  }; 
 
  let arr = [];
+
 export const guardarPedidoArr = (objeto) => {
     arr.push(obtenerObj(objeto))
   console.log(arr)
   return arr
  }
-// export const guardarArray = (arrFiltrar) => {
+ 
+export const guardarLocalStorage = (obj) => {
+  localStorage.setItem('array pedido', JSON.stringify(obj));
+}
 
-// }
-// export const guardarLocalStorage = (obj) => {
-//   localStorage.setItem('pedido', JSON.stringify(obj));
-// }
+guardarLocalStorage(); 
 
 // export const obtenerLocalStorage = () => {
 //   let pedido = JSON.parse(localStorage.getItem('pedido'));

@@ -9,15 +9,15 @@ export const mostrarDesayuno = (obj) => {
   divDesayuno.setAttribute('id', 'contenedor-desayuno');
   divDesayuno.innerHTML = templateDesayuno;
 
-  const pedidoAgregado = document.getElementById('pedido-agregado')
+  // const pedidoAgregado = document.getElementById('pedido-agregado')
    
   const btnComida = divDesayuno.querySelector(`#btn-${obj.id}`);
   btnComida.addEventListener('click', () => {
-   guardarPedidoArr(obj).forEach(producto => {
-     pedidoAgregado.appendChild(agregarPedido(producto))
-   })
-   btnComida.disabled = true; 
-  //  console.log(contador)
+   guardarPedidoArr(obj)
+  // .forEach(producto => {
+  //    pedidoAgregado.appendChild(agregarPedido(producto))
+  //  })
+  //  btnComida.disabled = true; 
   })
   return divDesayuno 
 }; 
@@ -38,6 +38,12 @@ export const agregarPedido = (obj) => {
   const divAgregarPedido = document.createElement('tr'); 
   
   divAgregarPedido.innerHTML = templateAgregarPedido; 
+
+  // const btnEliminar = divAgregarPedido.querySelector('#eliminar')
+
+  // btnEliminar.addEventListener('click', () => {
+  //   divAgregarPedido.innerHTML = '';
+  // })
 
   return divAgregarPedido
 }
