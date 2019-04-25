@@ -2,7 +2,7 @@ import { guardarPedidoArr } from "../controller/controller.js";
 
 export const mostrarDesayuno = (obj) => {
   const templateDesayuno = `
-        <button id="btn-${obj.id}" class="boton btn btn-success btn-lg">${obj.pedido} s/.${obj.precio}</button>
+        <button id="btn-${obj.id}" class="boton btn btn-success btn-lg"><img src="${obj.imagen}" alt="${obj.pedido}" width="100">${obj.pedido} s/.${obj.precio}</button>
     `; 
     
   const divDesayuno = document.createElement('div'); 

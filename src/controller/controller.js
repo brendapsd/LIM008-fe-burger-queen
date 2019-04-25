@@ -31,19 +31,32 @@ export const filtrarArrAlmuerzoCena = (arrObj) => {
    return objetoDesayuno
  }; 
 
- let arr = [];
+let arr = [];
+
+// export const guardarPedidoArr = (objeto) => {
+//     arr.push(obtenerObj(objeto))
+//   console.log(arr)
+//   return arr
+//  }
 
 export const guardarPedidoArr = (objeto) => {
+  console.log(objeto.id !== objeto.id)
+  console.log(objeto.id)
+  if(objeto.id === objeto.id){
     arr.push(obtenerObj(objeto))
+    console.log('bye')
+  } else {
+    console.log('holi');
+  }
   console.log(arr)
   return arr
- }
- 
-export const guardarLocalStorage = (obj) => {
-  localStorage.setItem('array pedido', JSON.stringify(obj));
 }
 
-guardarLocalStorage(); 
+// export const guardarLocalStorage = (obj) => {
+//   localStorage.setItem('array pedido', JSON.stringify(obj));
+// }
+
+// guardarLocalStorage(); 
 
 // export const obtenerLocalStorage = () => {
 //   let pedido = JSON.parse(localStorage.getItem('pedido'));
