@@ -1,4 +1,4 @@
-import { guardarPedidoArr } from "../controller/controller.js";
+import { guardarPedidoArr, obtenerObj } from "../controller/controller.js";
 
 export const mostrarDesayuno = (obj) => {
   const templateDesayuno = `
@@ -9,15 +9,14 @@ export const mostrarDesayuno = (obj) => {
   divDesayuno.setAttribute('id', 'contenedor-desayuno');
   divDesayuno.innerHTML = templateDesayuno;
 
-  // const pedidoAgregado = document.getElementById('pedido-agregado')
+  const pedidoAgregado = document.getElementById('pedido-agregado')
    
   const btnComida = divDesayuno.querySelector(`#btn-${obj.id}`);
   btnComida.addEventListener('click', () => {
-   guardarPedidoArr(obj)
-  // .forEach(producto => {
-  //    pedidoAgregado.appendChild(agregarPedido(producto))
-  //  })
-  //  btnComida.disabled = true; 
+   guardarPedidoArr(obtenerObj(obj)).forEach(producto => {
+     pedidoAgregado.innerHTML = ''
+     pedidoAgregado.appendChild(agregarPedido(producto))
+   })
   })
   return divDesayuno 
 }; 

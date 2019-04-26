@@ -19,15 +19,16 @@ export const filtrarArrAlmuerzoCena = (arrObj) => {
 }
 
  let contador = 1; 
- const obtenerObj = (obj) => {
+export const obtenerObj = (obj) => {
+  //  console.log(obj)
     const objetoDesayuno = {
        id: obj.id,
        producto: obj.pedido,
        precio: obj.precio,
        cantidad: contador,
-       PxC: obj.precio*contador
+       PxC: obj.precio * contador
     }
-  //  console.log(objetoDesayuno)
+  //  console.log(objetoDesayuno.cantidad)
    return objetoDesayuno
  }; 
 
@@ -40,13 +41,14 @@ let arr = [];
 //  }
 
 export const guardarPedidoArr = (objeto) => {
-  console.log(objeto.id !== objeto.id)
-  console.log(objeto.id)
-  if(objeto.id === objeto.id){
-    arr.push(obtenerObj(objeto))
-    console.log('bye')
+// console.log(objeto)
+  const elemArr = arr.find(element => element.id === objeto.id)
+// console.log(elemArr) 
+  if(elemArr === undefined){
+    arr.push(objeto)  
   } else {
-    console.log('holi');
+    // console.log('soy cantidad '+ objeto.cantidad)
+    console.log(arr.map(element => element.cantidad++)); 
   }
   console.log(arr)
   return arr
