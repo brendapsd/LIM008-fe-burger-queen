@@ -18,21 +18,26 @@ export const filtrarArrAlmuerzoCena = (arrObj) => {
   return arrObjAlmuerzoCena
 }
 
- let contador = 1; 
-export const obtenerObj = (obj) => {
-  //  console.log(obj)
-    const objetoDesayuno = {
-       id: obj.id,
-       producto: obj.pedido,
-       precio: obj.precio,
-       cantidad: contador,
-       PxC: obj.precio * contador
-    }
-  //  console.log(objetoDesayuno.cantidad)
-   return objetoDesayuno
- }; 
+//  let contador = 1; 
+// export const obtenerObj = (obj) => {
+//     const objetoDesayuno = {
+//        id: obj.id,
+//        producto: obj.pedido,
+//        precio: obj.precio,
+//        cantidad: 1,
+//     }
+//    return objetoDesayuno
+//  }; 
 
 let arr = [];
+
+export const guardarNombreArr = () => {
+  const name = document.querySelector('#name').value;    
+  const nombre = document.querySelector('#nombre'); 
+  arr.push(name)
+  console.log(arr)
+  nombre.innerHTML = name; 
+}
 
 // export const guardarPedidoArr = (objeto) => {
 //     arr.push(obtenerObj(objeto))
@@ -41,18 +46,17 @@ let arr = [];
 //  }
 
 export const guardarPedidoArr = (objeto) => {
-// console.log(objeto)
-  const elemArr = arr.find(element => element.id === objeto.id)
-// console.log(elemArr) 
-  if(elemArr === undefined){
+  const objArr = arr.find(obj => obj.id === objeto.id)
+  if(objArr === undefined){
+    objeto.cantidad = 1
     arr.push(objeto)  
   } else {
-    // console.log('soy cantidad '+ objeto.cantidad)
-    console.log(arr.map(element => element.cantidad++)); 
+    objeto.cantidad += 1
   }
   console.log(arr)
   return arr
 }
+
 
 // export const guardarLocalStorage = (obj) => {
 //   localStorage.setItem('array pedido', JSON.stringify(obj));

@@ -1,6 +1,6 @@
 import { mostrarDesayuno } from "./templateDesayuno.js";
 import { mostrarAlmuerzoCena } from "./templateAlmuerzoCena.js";
-import { filtrarArrDesayuno, filtrarArrAlmuerzoCena } from "../controller/controller.js";
+import { filtrarArrDesayuno, filtrarArrAlmuerzoCena, guardarNombreArr } from "../controller/controller.js";
 
 export const mostrarMenu = (arrObjData) => {
     const template = `
@@ -20,9 +20,10 @@ export const mostrarMenu = (arrObjData) => {
    
     const btnEnviar = div.querySelector('#btn-enviar');
     btnEnviar.addEventListener('click', () => {
-        const name = div.querySelector('#name').value;    
-        const nombre = document.querySelector('#nombre'); 
-        nombre.innerHTML = name; 
+        // const name = div.querySelector('#name').value;    
+        // const nombre = document.querySelector('#nombre'); 
+        // nombre.innerHTML = name; 
+        guardarNombreArr()
     }); 
 
     const btnDesayuno = div.querySelector('#desayuno');

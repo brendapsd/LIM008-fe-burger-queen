@@ -1,4 +1,4 @@
-import { guardarPedidoArr, obtenerObj } from "../controller/controller.js";
+import { guardarPedidoArr } from "../controller/controller.js";
 
 export const mostrarDesayuno = (obj) => {
   const templateDesayuno = `
@@ -13,25 +13,27 @@ export const mostrarDesayuno = (obj) => {
    
   const btnComida = divDesayuno.querySelector(`#btn-${obj.id}`);
   btnComida.addEventListener('click', () => {
-   guardarPedidoArr(obtenerObj(obj)).forEach(producto => {
-     pedidoAgregado.innerHTML = ''
+    pedidoAgregado.innerHTML = ''
+    let sumaTotal = 0
+   guardarPedidoArr(obj).forEach(producto => {
      pedidoAgregado.appendChild(agregarPedido(producto))
+     sumaTotal += producto.precio * producto.cantidad
    })
+   document.querySelector('#suma-total').innerHTML = sumaTotal;
   })
   return divDesayuno 
 }; 
 
 export const agregarPedido = (obj) => {
-  console.log(obj)
   const templateAgregarPedido = `
-            <td id="comida">${obj.producto}</td>
-            <td id="precio">s/.${obj.precio}</td>
-            <td id="cantidad">
+            <td class="comida">${obj.pedido}</td>
+            <td class="precio">s/.${obj.precio}</td>
+            <td class="cantidad">
             <i class="cursor fas fa-minus mr-2 text-secondary"></i>
             <span class="badge badge-pill badge-success">${obj.cantidad}</span>
             <i class="cursor fas fa-plus ml-2 text-secondary"></i>
             </td>
-            <td id="precioXcantidad">s/.${obj.precio}</td>
+            <td >s/.<span class="precioXcantidad">${obj.precio * obj.cantidad}</span></td>
             <td id="eliminar"><button>x</button></td>
   `; 
   const divAgregarPedido = document.createElement('tr'); 
