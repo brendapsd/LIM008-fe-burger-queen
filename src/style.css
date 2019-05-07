@@ -35,6 +35,9 @@ header{
 .boton{
     margin: 0.5%;
 }
+span{
+    display: block;
+}
 #contenedor-desayuno, #contenedor-almuerzo-cena{
     display: inline;
 }

@@ -31,13 +31,13 @@ export const filtrarArrAlmuerzoCena = (arrObj) => {
 
 let arr = [];
 
-export const guardarNombreArr = () => {
-  const name = document.querySelector('#name').value;    
-  const nombre = document.querySelector('#nombre'); 
-  arr.push(name)
-  console.log(arr)
-  nombre.innerHTML = name; 
-}
+// export const guardarNombreArr = () => {
+//   const name = document.querySelector('#name').value;    
+//   const nombre = document.querySelector('#nombre'); 
+//   arr.push(name)
+//   console.log(arr)
+//   nombre.innerHTML = name; 
+// }
 
 // export const guardarPedidoArr = (objeto) => {
 //     arr.push(obtenerObj(objeto))

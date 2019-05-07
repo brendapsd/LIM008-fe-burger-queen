@@ -19,7 +19,7 @@ export const mostrarPedido = () => {
               <td>Total del pedido:</td>
               <td></td>
               <td></td>
-              <td>s/. <span id="suma-total"></span></td>
+              <td>s/.<span id="suma-total"></span></td>
             </tr>
           </tfoot>
         </table>

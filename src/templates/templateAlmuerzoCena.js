@@ -1,6 +1,10 @@
 export const mostrarAlmuerzoCena = (objs) => {
     const templateAlmuerzoCena = `
-        <button id="btn-${objs.id}" class="boton btn btn-warning btn-lg"><img src="${objs.imagen}" alt="${objs.pedido}" width="100">${objs.pedido} s/.${objs.precio}</button>
+        <button id="btn-${objs.id}" class="boton btn btn-warning btn-lg">
+        <span><img src="${objs.imagen}" alt="${objs.pedido}" width="100"></span>
+        <span>${objs.pedido}</span>
+        <span>s/.${objs.precio}</span>
+        </button>
     `;
     const divAlmuerzoCena = document.createElement('div');
     divAlmuerzoCena.setAttribute('id','contenedor-almuerzo-cena')
