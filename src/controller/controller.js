@@ -53,7 +53,7 @@ export const guardarPedidoArr = (objeto) => {
   } else {
     objeto.cantidad += 1
   }
-  console.log(arr)
+  // console.log(arr)
   return arr
 }
 

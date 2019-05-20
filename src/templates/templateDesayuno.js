@@ -48,6 +48,28 @@ export const agregarPedido = (obj) => {
 
   btnEliminar.addEventListener('click', () => {
     divAgregarPedido.innerHTML = '';
+    const idEliminar = obj.id; 
+    let arrObj = guardarPedidoArr(obj)
+    
+    const getIndice = (idProducto) => {
+      var indice = -1;
+      arrObj.filter((producto, i) => {
+          if (producto.id === idProducto) {
+              indice = i;
+          }
+      });
+      return indice;
+  }
+  console.log(getIndice(idEliminar))
+  arrObj.splice(getIndice(idEliminar), 1);
+  console.log(arrObj);
+
+  let restaTotal = document.querySelector('#suma-total');
+  console.log(restaTotal.value);
+  // arrObj.forEach(producto => {
+  //   restaTotal -= producto.precio * producto.cantidad
+  // })
+  // document.querySelector('#suma-total').innerHTML = restaTotal;
   })
 
   return divAgregarPedido
