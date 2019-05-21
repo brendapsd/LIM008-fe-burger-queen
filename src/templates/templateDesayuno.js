@@ -60,16 +60,17 @@ export const agregarPedido = (obj) => {
       });
       return indice;
   }
-  console.log(getIndice(idEliminar))
   arrObj.splice(getIndice(idEliminar), 1);
   console.log(arrObj);
 
-  let restaTotal = document.querySelector('#suma-total');
-  console.log(restaTotal.value);
-  // arrObj.forEach(producto => {
-  //   restaTotal -= producto.precio * producto.cantidad
-  // })
-  // document.querySelector('#suma-total').innerHTML = restaTotal;
+  let restaTotal = Number(document.querySelector('#suma-total').innerHTML);
+  console.log(restaTotal)
+  // console.log(typeof(restaTotal))
+  arrObj.forEach(producto => {
+    restaTotal -= producto.precio * producto.cantidad
+  })
+  document.querySelector('#suma-total').innerHTML = restaTotal;
+  
   })
 
   return divAgregarPedido
