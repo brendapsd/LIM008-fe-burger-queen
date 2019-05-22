@@ -29,6 +29,7 @@ export const mostrarDesayuno = (obj) => {
 }; 
 
 export const agregarPedido = (obj) => {
+  
   const templateAgregarPedido = `
             <td class="comida">${obj.pedido}</td>
             <td class="precio">s/.${obj.precio}</td>
@@ -47,10 +48,11 @@ export const agregarPedido = (obj) => {
   const btnEliminar = divAgregarPedido.querySelector('#eliminar')
 
   btnEliminar.addEventListener('click', () => {
+    console.log(obj)
     divAgregarPedido.innerHTML = '';
     const idEliminar = obj.id; 
-    let arrObj = guardarPedidoArr(obj)
-    
+    const arrObj = guardarPedidoArr(obj)
+    console.log(obj.cantidad)
     const getIndice = (idProducto) => {
       var indice = -1;
       arrObj.filter((producto, i) => {
@@ -62,14 +64,17 @@ export const agregarPedido = (obj) => {
   }
   arrObj.splice(getIndice(idEliminar), 1);
   console.log(arrObj);
-
-  let restaTotal = Number(document.querySelector('#suma-total').innerHTML);
-  console.log(restaTotal)
-  // console.log(typeof(restaTotal))
-  arrObj.forEach(producto => {
-    restaTotal -= producto.precio * producto.cantidad
-  })
-  document.querySelector('#suma-total').innerHTML = restaTotal;
+  console.log(obj.cantidad)
+  // let restaTotal = Number(document.querySelector('#suma-total').innerHTML);
+  // // console.log(restaTotal)
+  // // console.log(typeof(restaTotal))
+  // // arrObj.forEach(producto => {
+  //   console.log(obj.precio * obj.cantidad) 
+    
+  //   restaTotal = (obj.precio * obj.cantidad) - restaTotal;
+  //   console.log(restaTotal)
+  // // })
+  // document.querySelector('#suma-total').innerHTML = restaTotal;
   
   })
 
