@@ -8,8 +8,8 @@ export const mostrarMenu = (arrObjData) => {
           <h2>Menú</h2>
               <input id="name" class="input" type="text" placeholder="Nombre del cliente">
               <button id="btn-enviar" class="btn btn-primary">Enviar</button> <br> <br>
-              <button id="desayuno" class="boton btn btn-primary  btn-lg">DESAYUNO</button> 
-              <button id="almuerzo-cena" class="boton btn btn-primary  btn-lg">ALMUERZO Y CENA</button>
+              <button id="desayuno" class="boton1 btn btn-primary  btn-lg">DESAYUNO</button> 
+              <button id="almuerzo-cena" class="boton1 btn btn-primary  btn-lg">ALMUERZO Y CENA</button>
               <div id="botones-menu"></div>
       </div>
     `; 

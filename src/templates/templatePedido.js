@@ -24,7 +24,7 @@ export const mostrarPedido = () => {
           </tfoot>
         </table>
 
-        <button id="enviar-pedido" class="boton btn btn-danger btn-lg">Enviar pedido</button>
+        <button id="enviar-pedido" class="boton1 btn btn-danger btn-lg">Enviar pedido</button>
 
     `;
     const div1 = document.createElement('div'); 

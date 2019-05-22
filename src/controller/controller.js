@@ -29,7 +29,7 @@ export const filtrarArrAlmuerzoCena = (arrObj) => {
 //    return objetoDesayuno
 //  }; 
 
-let arr = [];
+export let arr = [];
 
 // export const guardarNombreArr = () => {
 //   const name = document.querySelector('#name').value;    
@@ -53,10 +53,29 @@ export const guardarPedidoArr = (objeto) => {
   } else {
     objeto.cantidad += 1
   }
-  // console.log(arr)
+  console.log(arr)
   return arr
 }
 
+export const eliminarObj = (arr) => {
+  arr.forEach(obj => {
+    const idEliminar = obj.id; 
+    const getIndice = (idProducto) => {
+      var indice = -1;
+      arr.filter((producto, i) => {
+          if (producto.id === idProducto) {
+              indice = i;
+          }
+      });
+      return indice;
+  }
+  arr.splice(getIndice(idEliminar), 1);
+  console.log(arr);
+  console.log(obj.cantidad)
+  })
+
+  return arr
+}
 
 // export const guardarLocalStorage = (obj) => {
 //   localStorage.setItem('array pedido', JSON.stringify(obj));

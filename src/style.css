@@ -34,6 +34,11 @@ header{
 }
 .boton{
     margin: 0.5%;
+    width: 250px !important;
+    height: 250px !important;
+}
+.boton1{
+    margin: 0.5%;
 }
 span{
     display: block;
