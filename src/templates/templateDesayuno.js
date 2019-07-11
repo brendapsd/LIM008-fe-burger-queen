@@ -39,7 +39,7 @@ export const agregarPedido = (obj) => {
             <i class="cursor fas fa-plus ml-2 text-secondary"></i>
             </td>
             <td >s/.<span class="precioXcantidad">${obj.precio * obj.cantidad}</span></td>
-            <td id="eliminar"><button class="btn btn-primary">x</button></td>
+            <td id="eliminar"><button class="btn btn-danger">x</button></td>
   `; 
   const divAgregarPedido = document.createElement('tr'); 
   
@@ -71,7 +71,7 @@ export const agregarPedido = (obj) => {
   // // arrObj.forEach(producto => {
   //   console.log(obj.precio * obj.cantidad) 
     
-    restaTotal = (obj.precio * obj.cantidad) - restaTotal;
+    restaTotal = restaTotal - (obj.precio * obj.cantidad);
     console.log(restaTotal)
   // })
   document.querySelector('#suma-total').innerHTML = restaTotal;

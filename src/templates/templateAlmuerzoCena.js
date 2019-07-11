@@ -1,3 +1,5 @@
+import { guardarPedidoArr, eliminarObj, arr } from "../controller/controller.js";
+
 export const mostrarAlmuerzoCena = (objs) => {
     const templateAlmuerzoCena = `
         <button id="btn-${objs.id}" class="boton btn btn-warning btn-lg">
@@ -14,8 +16,13 @@ export const mostrarAlmuerzoCena = (objs) => {
   
     const btnComida = divAlmuerzoCena.querySelector(`#btn-${objs.id}`);
     btnComida.addEventListener('click', () => {
-        console.log(objs)
-        pedidoAgregado.appendChild(agregarPedido(objs)); 
+        pedidoAgregado.innerHTML = ''
+        let sumaTotal = 0
+        guardarPedidoArr(objs).forEach(producto => {
+        pedidoAgregado.appendChild(agregarPedido(producto))
+        sumaTotal += producto.precio * producto.cantidad
+        })
+        document.querySelector('#suma-total').innerHTML = sumaTotal;
     })
   
     return divAlmuerzoCena
@@ -27,11 +34,11 @@ export const agregarPedido = (obj) => {
               <td id="precio">s/.${obj.precio}</td>
               <td id="cantidad">
               <i class="cursor fas fa-minus mr-2 text-secondary"></i>
-              <span class="badge badge-pill badge-warning">1</span>
+              <span class="badge badge-pill badge-warning">${obj.cantidad}</span>
               <i class="cursor fas fa-plus ml-2 text-secondary"></i>
               </td>
               <td id="precioXcantidad">s/.${obj.precio}</td>
-              <td id="eliminar"><button>x</button></td>
+              <td id="eliminar"><button class="btn btn-danger">x</button></td>
     `; 
     const divAgregarPedido = document.createElement('tr'); 
     
@@ -41,6 +48,15 @@ export const agregarPedido = (obj) => {
 
     btnEliminar.addEventListener('click', () => {
         divAgregarPedido.innerHTML = '';
+        eliminarObj(arr)
+
+        let restaTotal = Number(document.querySelector('#suma-total').innerHTML);
+    
+        restaTotal = restaTotal - (obj.precio * obj.cantidad);
+        console.log(restaTotal)
+
+        document.querySelector('#suma-total').innerHTML = restaTotal;
+
     })
   
     return divAgregarPedido
